@@ -45,14 +45,6 @@ For every consecutive 5 results of reading are no data, `LogReader` checks wheth
 
 If it had been changed, `LogReader` close current file and re-open the file.
 
-## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/logchaser/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
 ## Contributors
 
 - [arcage](https://github.com/arcage) ʕ·ᴥ·ʔAKJ - creator, maintainer
