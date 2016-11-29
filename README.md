@@ -41,7 +41,7 @@ end
 
 When reading no data for reasons such as EOF, `LogReader` try to read more data every second.
 
-For every consecutive 5 results of reading are no data, `LogReader` checks whether or not the inode number associated with the file name was changed.
+For every consecutive 5 results that no data read, `LogReader` checks whether or not the inode number associated with the file name was changed.
 
 If it had been changed, `LogReader` close current file and re-open the file.
 
