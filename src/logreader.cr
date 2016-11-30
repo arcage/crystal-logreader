@@ -25,11 +25,11 @@ class LogReader
         if char = @file.read_char
           str << char
           break if char == '\n'
-          p eof_count = 0
-          p not_exist = false
+          eof_count = 0
+          not_exist = false
         elsif eof_count < 5
           sleep(1)
-          p eof_count += 1
+          eof_count += 1
         else
           begin
             @file = reopen_file if File.stat(@path).ino != ino
@@ -37,10 +37,10 @@ class LogReader
             if err.errno != Errno::ENOENT || not_exist
               raise err
             else
-              p not_exist = true
+              not_exist = true
             end
           ensure
-            p eof_count = 0
+            eof_count = 0
           end
         end
       end
