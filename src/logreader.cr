@@ -32,7 +32,7 @@ class LogReader
           eof_count += 1
         else
           begin
-            @file = reopen_file if File.stat(@path).ino != ino
+            @file = reopen_file if file_changed?
           rescue err : Errno
             if err.errno != Errno::ENOENT || not_exist
               raise err
@@ -47,8 +47,8 @@ class LogReader
     end
   end
 
-  private def ino
-    @file.stat.ino
+  private def file_changed?
+    ! @file.info.same_file?(File.info(@path))
   end
 
   private def reopen_file : File
