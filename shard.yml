@@ -1,9 +1,9 @@
 name: logreader
-version: 0.1.1
+version: 0.1.2
 
 authors:
   - ʕ·ᴥ·ʔAKJ <arcage@denchu.org>
 
-crystal: 0.25.0
+crystal: 0.35.1
 
 license: MIT

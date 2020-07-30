@@ -1,6 +1,6 @@
-require "./logreader/*"
-
 class LogReader
+
+  VERSION = "0.1.2"
   class Error < Exception; end
 
   @path : String
@@ -33,8 +33,8 @@ class LogReader
         else
           begin
             @file = reopen_file if file_changed?
-          rescue err : Errno
-            if err.errno != Errno::ENOENT || not_exist
+          rescue err : File::NotFoundError
+            if not_exist
               raise err
             else
               not_exist = true
